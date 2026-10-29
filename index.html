@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e8e4d8" />
+    <title>For Momo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <audio id="backgroundMusic" loop preload="auto">
+      <source src="assets/song.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button
+      class="music-toggle"
+      id="musicToggle"
+      type="button"
+      aria-label="Play music"
+      title="Toggle music"
+    >
+      <span class="music-icon">✳</span>
+      <span class="music-state" id="musicState">sound off</span>
+    </button>
+
+    <main class="experience">
+      <!-- OPENING: ENVELOPE -->
+      <section class="scene opening active" id="opening">
+        <div class="opening-note"></div>
+
+        <div class="envelope-area">
+          <div class="envelope" id="envelope">
+            <div class="envelope-back"></div>
+
+            <div class="letter-peek">
+              <span class="peek-date">For you, always</span>
+              <span class="peek-title">A note for you</span>
+              <span class="peek-name handwritten">Momo,</span>
+              <span class="peek-line"></span>
+              <span class="peek-line short"></span>
+              <span class="peek-line"></span>
+            </div>
+
+            <div class="envelope-front"></div>
+            <div class="envelope-flap"></div>
+
+            <button
+              class="envelope-seal"
+              id="envelopeSeal"
+              type="button"
+              aria-label="Open your birthday gift"
+            >
+              <span>M</span>
+            </button>
+          </div>
+        </div>
+
+        <p class="opening-hint" id="openingHint">Touch the seal to open</p>
+
+        <svg class="opening-doodle" viewBox="0 0 120 80" aria-hidden="true">
+          <path
+            d="M8 60 Q35 8 63 43 T112 20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.3"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M91 12 L94 20 L102 23 L94 26 L91 34 L88 26 L80 23 L88 20 Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.1"
+          />
+        </svg>
+      </section>
+
+      <!-- INTRODUCTION -->
+      <section
+        class="scene intro-screen"
+        id="introScreen"
+        aria-hidden="true"
+        hidden
+      >
+        <div class="intro-card">
+          <div class="intro-heading">
+            <p class="intro-greeting handwritten">Hey Momo,</p>
+
+            <span class="intro-rule" aria-hidden="true"></span>
+          </div>
+
+          <div class="intro-paragraphs chapter-copy handwritten-copy">
+            <p class="reveal-text">
+              I hope you're smiling already, because that's kind of the whole point of this.
+            </p>
+
+            <p class="reveal-text">
+              I wanted to give you something more than a gift you'd unwrap and put away. Something that says the things I think about you far more often than I say them out loud.
+            </p>
+
+            <p class="reveal-text">
+              So I made this. A little something, built just for you.
+            </p>
+
+            <p class="reveal-text">
+              I hope it makes you smile the way you make me smile, without even trying.
+            </p>
+
+            <p class="reveal-text">
+              Anyway, enough talking. This little thing is yours to explore. Enjoy, Mo!
+            </p>
+          </div>
+
+          <button class="intro-continue" id="continueToScrapbook" type="button">
+            <span>Get started</span>
+            <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- SCRAPBOOK -->
+      <section
+        class="scene scrapbook-scene"
+        id="scrapbookScene"
+        aria-hidden="true"
+      >
+        <header class="scrapbook-header">
+          <div>
+            <span class="eyebrow">A FEW THINGS I WANTED TO SAY</span>
+          </div>
+
+          <div class="chapter-counter" aria-live="polite">
+            <span id="currentChapter">01</span>
+            <span class="counter-divider">/</span>
+            <span>06</span>
+          </div>
+        </header>
+
+        <div class="book-wrap">
+          <div class="book-page" id="bookPage">
+            <!-- CHAPTER 01 -->
+            <article class="chapter chapter-one visible" data-chapter="0">
+              <div class="chapter-topline">
+                <span class="chapter-label">CHAPTER 01</span>
+                <span class="chapter-date">Where it all started</span>
+              </div>
+
+              <div class="chapter-one-layout">
+                <div class="chapter-one-heading">
+                  <span class="margin-note handwritten">
+                    I still remember this.
+                  </span>
+
+                  <h2 class="draw-title">
+                    <span class="draw-line">IT ALL</span>
+                    <span class="draw-line">STARTED</span>
+                    <span class="draw-line accent-line">AT CDS.</span>
+                  </h2>
+
+                  <svg
+                    class="doodle underline-doodle"
+                    viewBox="0 0 180 18"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 12 Q48 2 90 10 T177 7"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+
+                <aside class="note-one paper-note">
+                  <span class="tiny-star">✳</span>
+
+                  <p class="handwritten">
+                    Best decision I ever made: walking up to you.
+                  </p>
+
+                  <svg
+                    class="note-squiggle"
+                    viewBox="0 0 100 18"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 10 Q20 1 35 10 T68 10 T98 7"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </aside>
+
+                <div class="chapter-copy handwritten-copy">
+                  <p class="reveal-text">
+                    Funny how one of the best things in my life started on a regular CDS day during NYSC. Just another weekly meeting, another day in khaki… and then there was you.
+                  </p>
+
+                  <p class="reveal-text">
+                    I remember walking up to you and starting a conversation. I didn't know where it would lead. I just knew I wanted to talk to you.
+                  </p>
+
+                  <p class="reveal-text">
+                    And ever since that day, it's been beautiful.
+                  </p>
+
+                  <p class="reveal-text">
+                    The conversations. The laughs. The little moments that seemed so ordinary back then and mean so much to me now.
+                  </p>
+
+                  <p class="reveal-text">
+                    I'm so glad I walked up to you that day, Moyin.
+                  </p>
+
+                  <p class="reveal-text">
+                    And today, there's something I really want you to know.
+                  </p>
+                </div>
+              </div>
+
+              <span class="page-folio">01</span>
+
+              <svg
+                class="corner-doodle doodle"
+                viewBox="0 0 90 90"
+                aria-hidden="true"
+              >
+                <path
+                  d="M10 75 Q28 20 55 45 T80 15"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+
+                <path
+                  d="M60 12 L63 20 L71 23 L63 26 L60 34 L57 26 L49 23 L57 20 Z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.1"
+                />
+              </svg>
+            </article>
+
+            <!-- CHAPTER 02 -->
+            <article class="chapter chapter-two" data-chapter="1" hidden>
+              <div class="chapter-topline">
+                <span class="chapter-label">CHAPTER 02</span>
+                <span class="chapter-date">A thought I kept</span>
+              </div>
+
+              <div class="name-chapter">
+                <div class="name-heading">
+                  <span class="chapter-kicker">THIS ONE STAYED WITH ME.</span>
+
+                  <h2 class="name-title">
+                    THE<br />
+                    MEANING<br />
+                    <em>of your</em><br />
+                    name.
+                  </h2>
+
+                  <div class="name-meaning handwritten">
+                    I praise God.
+                  </div>
+
+                  <svg
+                    class="name-doodle doodle"
+                    viewBox="0 0 180 95"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M10 72 C25 25 50 20 65 52 S98 82 113 42 S150 18 171 30"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                    />
+
+                    <path
+                      d="M151 13 L154 21 L162 24 L154 27 L151 35 L148 27 L140 24 L148 21 Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.2"
+                    />
+                  </svg>
+                </div>
+
+                <div class="name-body chapter-copy handwritten-copy">
+                  <p class="reveal-text">
+                    Moyinoluwa. Your name carries a beautiful declaration: I praise God.
+                  </p>
+
+                  <p class="reveal-text">
+                    And I truly believe that's how your story is written. It isn't just a name you were given. It's a promise over your life.
+                  </p>
+
+                  <p class="reveal-text">
+                    Whatever chapter you're in right now, the hard ones, the uncertain ones, the ones where you're working so hard and still waiting to see the results, I believe they all end the same way: in praise.
+                  </p>
+
+                  <p class="reveal-text">
+                    Every prayer you've whispered, every late night, every bit of effort you've poured into your dreams, one day you'll look back at all of it and say, "God did it."
+                  </p>
+
+                  <p class="reveal-text">
+                    So when things feel slow or heavy, I hope you remember who you are. Your name already tells the ending.
+                  </p>
+
+                  <p class="reveal-text">
+                    Your story ends in praise. And I can't wait to watch it unfold.
+                  </p>
+                </div>
+
+                <div class="name-side-note handwritten">
+                  Your story ends in praise.<br />
+                  Don't forget that.
+                </div>
+              </div>
+
+              <span class="page-folio">02</span>
+            </article>
+
+            <!-- CHAPTER 03 -->
+            <article class="chapter chapter-three" data-chapter="2" hidden>
+              <div class="chapter-topline">
+                <span class="chapter-label">CHAPTER 03</span>
+                <span class="chapter-date"
+                  >Things I genuinely wish for you</span
+                >
+              </div>
+
+              <div class="wishes-layout">
+                <div class="wishes-heading">
+                  <span class="chapter-kicker">MORE THAN A BIRTHDAY WISH</span>
+
+                  <h2 class="draw-title">
+                    WHAT I<br />
+                    <em>WISH</em><br />
+                    FOR YOU.
+                  </h2>
+
+                  <p class="wishes-intro handwritten">
+                    Not just for today.<br />
+                    For the days after, too.
+                  </p>
+
+                  <svg
+                    class="wish-doodle doodle"
+                    viewBox="0 0 180 130"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 112 Q42 22 85 65 T168 15"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                    />
+
+                    <path
+                      d="M129 44 C115 28 98 47 129 68 C160 47 143 28 129 44 Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.3"
+                    />
+
+                    <path
+                      d="M34 28 L37 36 L45 39 L37 42 L34 50 L31 42 L23 39 L31 36 Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.1"
+                    />
+                  </svg>
+                </div>
+
+                <div class="wish-list">
+                  <div class="wish-item">
+                    <span class="wish-index">01</span>
+
+                    <div>
+                      <h3 class="handwritten">Peace of mind</h3>
+
+                      <p class="reveal-text">
+                        I hope you always have peace in your heart, even on the
+                        busiest days, and that you never feel like you have to
+                        carry everything alone.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="wish-item">
+                    <span class="wish-index">02</span>
+
+                    <div>
+                      <h3 class="handwritten">Good health, real rest</h3>
+
+                      <p class="reveal-text">
+                        I hope you get enough rest, take care of yourself even
+                        when deadlines pile up, and remember that being
+                        productive isn't the same as being okay.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="wish-item">
+                    <span class="wish-index">03</span>
+
+                    <div>
+                      <h3 class="handwritten">Your dreams, realised</h3>
+
+                      <p class="reveal-text">
+                        You're so ambitious, Mo, and I hope every single thing
+                        you work so hard for finds its way to you. I hope your ideas become real, your efforts pay
+                        off, and one day you get to look at everything you've
+                        built with a smile that says, I really did that.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="wish-item">
+                    <span class="wish-index">04</span>
+
+                    <div>
+                      <h3 class="handwritten">Faith that sustains you</h3>
+
+                      <p class="reveal-text">
+                        I hope your faith keeps growing, your family stays
+                        healthy and happy, and life surrounds you with people
+                        who genuinely want to see you win.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="wish-item">
+                    <span class="wish-index">05</span>
+
+                    <div>
+                      <h3 class="handwritten">Time to enjoy your life</h3>
+
+                      <p class="reveal-text">
+                        I hope you get to travel, discover beautiful places, eat
+                        food that makes you ridiculously happy, and collect
+                        stories you'll still be laughing about years from now.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="chapter-copy wishes-continuation handwritten-copy">
+                <p class="reveal-text">
+                  And I hope you make an unreasonable amount of money, too. May
+                  your hard work bring you opportunities you never imagined, and
+                  may you have the freedom to do beautiful things with
+                  everything you earn.
+                </p>
+
+                <p class="reveal-text">
+                  More than anything, I hope happiness finds you in the big
+                  milestones and in the ordinary Tuesdays, too. I hope you build
+                  a life you're proud of, but also one you genuinely love
+                  living.
+                </p>
+
+                <p class="reveal-text">
+                  A life with room for ambition and rest, adventure and peace,
+                  meaningful work and absolutely ridiculous moments.
+                </p>
+
+                <p class="reveal-text">
+                  You deserve all of that. Not someday, when everything is
+                  finally perfect. Along the way, too.
+                </p>
+              </div>
+
+              <span class="page-folio">03</span>
+            </article>
+
+            <!-- CHAPTER 04 -->
+            <article class="chapter chapter-four" data-chapter="3" hidden>
+              <div class="chapter-topline">
+                <span class="chapter-label">CHAPTER 04</span>
+                <span class="chapter-date">Who you are</span>
+              </div>
+
+              <div class="photo-chapter">
+                <div class="photo-heading">
+                  <span class="chapter-kicker"
+                    >A LITTLE MOMENT WORTH KEEPING</span
+                  >
+
+                  <h2 class="photo-title draw-title">
+                    A LITTLE<br />
+                    <em>PIECE</em><br />
+                    OF YOU.
+                  </h2>
+
+                  <p class="photo-subtitle handwritten">
+                    Some moments deserve a place here.
+                  </p>
+
+                  <svg
+                    class="photo-heading-doodle doodle"
+                    viewBox="0 0 130 80"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M7 64 Q33 7 65 38 T122 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                    />
+
+                    <path
+                      d="M96 37 L99 45 L107 48 L99 51 L96 59 L93 51 L85 48 L93 45 Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.1"
+                    />
+                  </svg>
+                </div>
+
+                <div class="photo-composition">
+                  <span class="photo-tape tape-left"></span>
+                  <span class="photo-tape tape-right"></span>
+
+                  <figure class="photo-frame">
+                    <img
+                      src="assets/image00002.jpeg"
+                      alt="Momo"
+                      class="her-photo"
+                      id="herPhoto"
+                    />
+
+                    <figcaption class="photo-caption handwritten">
+                      Beautiful, always.
+                    </figcaption>
+                  </figure>
+
+                  <span class="photo-margin-note handwritten">
+                    Look at her.
+                    <span>↙</span>
+                  </span>
+                </div>
+
+                <div class="photo-copy chapter-copy handwritten-copy">
+                  <p class="reveal-text">
+                    And then there's this picture. Every time I look at it, I'm reminded of how beautiful you are, and honestly, the picture doesn't even do you justice.
+                  </p>
+
+                  <p class="reveal-text">
+                    But what I love most about you goes way beyond what a camera can catch. You're one of the smartest people I know. The way you think, the way you see things, the way you figure things out still amazes me.
+                  </p>
+
+                  <p class="reveal-text">
+                    You're ambitious in a way that inspires me. You dream big, and you don't just dream, you work. I've watched how hard you push, how much you give, and how you keep going even when it's tough.
+                  </p>
+
+                  <p class="reveal-text">
+                    So here's what I wanted to say: never doubt yourself. Everything you're working toward is coming, because you're the kind of woman who makes things happen.
+                  </p>
+                </div>
+              </div>
+
+              <span class="page-folio">04</span>
+            </article>
+
+            <!-- CHAPTER 05: MEMORIES -->
+            <article class="chapter chapter-memories" data-chapter="4" hidden>
+              <div class="chapter-topline">
+                <span class="chapter-label">CHAPTER 05</span>
+                <span class="chapter-date">Little moments, kept</span>
+              </div>
+
+              <div class="memories-layout">
+                <div class="memories-heading">
+                  <span class="chapter-kicker">PRESS PLAY, MO</span>
+
+                  <h2 class="draw-title">
+                    SOME OF<br />
+                    <em>our</em><br />
+                    MOMENTS.
+                  </h2>
+
+                  <p class="memories-intro handwritten">
+                    I could watch these on repeat.<br />
+                    (Tap one for sound.)
+                  </p>
+                </div>
+
+                <!-- Add or remove a memory by copying a <figure class="memory-clip"> block.
+                     Videos loop silently; tapping one turns its sound on. -->
+                <div class="memory-clips">
+                  <figure class="memory-clip">
+                    <span class="photo-tape tape-left"></span>
+                    <video
+                      src="assets/B42DB135-9C7E-4A1B-97D4-106D114DE6DD.mov"
+                      class="scrapbook-video"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                    ></video>
+                    <span class="sound-hint">tap for sound</span>
+                    <figcaption class="handwritten">Corper days.</figcaption>
+                  </figure>
+
+                  <figure class="memory-clip">
+                    <span class="photo-tape tape-right"></span>
+                    <video
+                      src="assets/E4F747F5-23D2-4440-906D-C3D91ADC3E51.mov"
+                      class="scrapbook-video"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                    ></video>
+                    <span class="sound-hint">tap for sound</span>
+                    <figcaption class="handwritten">Khaki and all.</figcaption>
+                  </figure>
+
+                  <figure class="memory-clip">
+                    <span class="photo-tape tape-left"></span>
+                    <video
+                      src="assets/BC5A7119-273E-4928-9BDF-3227DED0D536.mov"
+                      class="scrapbook-video"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                    ></video>
+                    <span class="sound-hint">tap for sound</span>
+                    <figcaption class="handwritten">Out and about.</figcaption>
+                  </figure>
+
+                  <figure class="memory-clip">
+                    <span class="photo-tape tape-right"></span>
+                    <video
+                      src="assets/C15ACFD6-E106-4D32-B187-D1970986A40A.mov"
+                      class="scrapbook-video"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                    ></video>
+                    <span class="sound-hint">tap for sound</span>
+                    <figcaption class="handwritten">Lost in the crowd.</figcaption>
+                  </figure>
+
+                  <figure class="memory-clip">
+                    <span class="photo-tape tape-left"></span>
+                    <video
+                      src="assets/7451255D-BE92-40FD-9850-BF1D7B07B6A0.mov"
+                      class="scrapbook-video"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                    ></video>
+                    <span class="sound-hint">tap for sound</span>
+                    <figcaption class="handwritten">Date night.</figcaption>
+                  </figure>
+
+                  <figure class="memory-clip">
+                    <span class="photo-tape tape-right"></span>
+                    <video
+                      src="assets/A5A9D6F8-1CCD-494E-820A-4F47DC39AD6E.mov"
+                      class="scrapbook-video"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                    ></video>
+                    <span class="sound-hint">tap for sound</span>
+                    <figcaption class="handwritten">Effortlessly pretty.</figcaption>
+                  </figure>
+
+                  <figure class="memory-clip">
+                    <span class="photo-tape tape-left"></span>
+                    <video
+                      src="assets/C934F92E-8DEA-4F13-AA65-136948FA1873.mov"
+                      class="scrapbook-video"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                    ></video>
+                    <span class="sound-hint">tap for sound</span>
+                    <figcaption class="handwritten">Mid-story, as always.</figcaption>
+                  </figure>
+
+                  <figure class="memory-clip">
+                    <span class="photo-tape tape-right"></span>
+                    <video
+                      src="assets/75631578-653E-49FE-B481-3E7FD8F4428F.mp4"
+                      class="scrapbook-video"
+                      muted
+                      loop
+                      playsinline
+                      preload="metadata"
+                    ></video>
+                    <span class="sound-hint">tap for sound</span>
+                    <figcaption class="handwritten">Café days.</figcaption>
+                  </figure>
+
+                  <figure class="memory-clip">
+                    <span class="photo-tape tape-left"></span>
+                    <img src="assets/image00003.png" alt="Our late-night calls." />
+                    <figcaption class="handwritten">Our late-night calls.</figcaption>
+                  </figure>
+                </div>
+
+                <div class="memories-copy chapter-copy handwritten-copy">
+                  <p class="reveal-text">
+                    From that first conversation at CDS to now, there are so
+                    many moments I've held on to. These are just a few of them.
+                  </p>
+
+                  <p class="reveal-text">
+                    And honestly? I can't wait to make many, many more with you.
+                  </p>
+                </div>
+              </div>
+
+              <span class="page-folio">05</span>
+            </article>
+
+            <!-- CHAPTER 06 -->
+            <article class="chapter chapter-five" data-chapter="5" hidden>
+              <div class="chapter-topline">
+                <span class="chapter-label">CHAPTER 06</span>
+                <span class="chapter-date">And finally...</span>
+              </div>
+
+              <div class="birthday-ending">
+                <div class="ending-decoration" aria-hidden="true">
+                  <svg class="ending-doodle doodle" viewBox="0 0 300 300">
+                    <path
+                      d="M30 220 C80 190 70 110 120 120 S170 200 220 110 S270 80 275 45"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.3"
+                      stroke-linecap="round"
+                    />
+
+                    <path
+                      d="M80 52 L84 63 L95 67 L84 71 L80 82 L76 71 L65 67 L76 63 Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.2"
+                    />
+
+                    <path
+                      d="M245 170 L248 178 L256 181 L248 184 L245 192 L242 184 L234 181 L242 178 Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.2"
+                    />
+
+                    <path
+                      d="M40 145 C20 123 0 145 40 174 C80 145 60 123 40 145 Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.2"
+                    />
+                  </svg>
+
+                  <span class="ending-star star-a">✳</span>
+                  <span class="ending-star star-b">✳</span>
+                  <span class="ending-star star-c">✳</span>
+                </div>
+
+                <h2 class="birthday-title draw-title">
+                  <span class="draw-line">Happy</span>
+                  <span class="draw-line accent-line">birthday,</span>
+                  <span class="draw-line">Moyinoluwa.</span>
+                </h2>
+
+                <div class="ending-rule"></div>
+
+                <div class="ending-copy chapter-copy handwritten-copy">
+                  <p class="reveal-text">
+                    I hope the year ahead brings you closer to the life you're
+                    building, and that it's even more beautiful than you imagined.
+                  </p>
+
+                  <p class="reveal-text">
+                    May you find good people, meaningful opportunities,
+                    unexpected adventures, and plenty of ordinary days that
+                    leave you feeling grateful to be here.
+                  </p>
+
+                  <p class="reveal-text">
+                    I'm so glad I walked up to you that day. Ever since, it's been
+                    beautiful, and I can't wait for everything still ahead.
+                  </p>
+                </div>
+
+                <p class="ending-reminder handwritten">
+                  May your story always end in praise.
+                </p>
+
+                <p class="ending-signature handwritten">— Ogemdi</p>
+
+                <button class="restart-button" id="restartButton" type="button">
+                  <span>Read it again</span>
+                  <span>↺</span>
+                </button>
+              </div>
+
+              <span class="page-folio">06</span>
+            </article>
+          </div>
+        </div>
+
+        <footer class="scrapbook-footer">
+          <button
+            class="page-control previous-page"
+            id="previousPage"
+            type="button"
+            disabled
+          >
+            <span>←</span>
+            <span>BACK</span>
+          </button>
+
+          <nav class="page-progress" aria-label="Scrapbook chapters">
+            <button
+              class="progress-dot active"
+              type="button"
+              data-go-to="0"
+              aria-label="Chapter 1"
+            ></button>
+
+            <button
+              class="progress-dot"
+              type="button"
+              data-go-to="1"
+              aria-label="Chapter 2"
+            ></button>
+
+            <button
+              class="progress-dot"
+              type="button"
+              data-go-to="2"
+              aria-label="Chapter 3"
+            ></button>
+
+            <button
+              class="progress-dot"
+              type="button"
+              data-go-to="3"
+              aria-label="Chapter 4"
+            ></button>
+
+            <button
+              class="progress-dot"
+              type="button"
+              data-go-to="4"
+              aria-label="Chapter 5"
+            ></button>
+
+            <button
+              class="progress-dot"
+              type="button"
+              data-go-to="5"
+              aria-label="Chapter 6"
+            ></button>
+          </nav>
+
+          <button class="page-control next-page" id="nextPage" type="button">
+            <span>NEXT</span>
+            <span>→</span>
+          </button>
+        </footer>
+      </section>
+    </main>
+
+    <div class="transition-overlay" id="transitionOverlay"></div>
+
+    <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
